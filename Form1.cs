@@ -71,5 +71,11 @@ namespace WVRPT2
             dataGridView1.DataSource = null;
             retrieveData("46050");
         }
+
+        private void capeCodMAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            retrieveData("44018");
+        }
     }
 }

@@ -36,6 +36,7 @@
             this.breezyPointNYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newportORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.capeCodMAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -73,6 +74,7 @@
             // selectBuoyToolStripMenuItem
             // 
             this.selectBuoyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.capeCodMAToolStripMenuItem,
             this.breezyPointNYToolStripMenuItem,
             this.newportORToolStripMenuItem});
             this.selectBuoyToolStripMenuItem.Name = "selectBuoyToolStripMenuItem";
@@ -104,6 +106,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(800, 375);
             this.dataGridView1.TabIndex = 2;
             // 
+            // capeCodMAToolStripMenuItem
+            // 
+            this.capeCodMAToolStripMenuItem.Name = "capeCodMAToolStripMenuItem";
+            this.capeCodMAToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.capeCodMAToolStripMenuItem.Text = "Cape Cod, MA";
+            this.capeCodMAToolStripMenuItem.Click += new System.EventHandler(this.capeCodMAToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,6 +141,7 @@
         private System.Windows.Forms.ToolStripMenuItem selectBuoyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem breezyPointNYToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newportORToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem capeCodMAToolStripMenuItem;
     }
 }
 
