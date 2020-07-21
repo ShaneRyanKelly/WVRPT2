@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Runtime.Remoting.Channels;
 
 namespace WVRPT2
 {
@@ -20,7 +21,7 @@ namespace WVRPT2
             con = ConnectDB();
         }
 
-        private void rockawayNYToolStripMenuItem_Click(object sender, EventArgs e)
+        private void retrieveData(string idNumber)
         {
             try
             {
@@ -35,7 +36,7 @@ namespace WVRPT2
                     STEEPNESS,
                     APD,
                     MWD
-                    from dbo.Buoy_44065";
+                    from dbo.Buoy_" + idNumber;
                 SqlCommand cmd = new SqlCommand(query, con);
 
                 con.Open();
@@ -44,14 +45,12 @@ namespace WVRPT2
                 dAdapter.Fill(ds);
                 dataGridView1.ReadOnly = true;
                 dataGridView1.DataSource = ds.Tables[0];
-                MessageBox.Show("connection successful");
                 con.Close();
             }
             catch (Exception es)
             {
                 MessageBox.Show(es.Message);
             }
-
         }
 
         private SqlConnection ConnectDB()
@@ -59,6 +58,18 @@ namespace WVRPT2
             String connectString = "Server=LAPTOP-DTUMN89D;Database=buoys;Trusted_Connection=True;";
             SqlConnection con = new SqlConnection(connectString);
             return con;
+        }
+
+        private void breezyPointNYToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            retrieveData("44065");
+        }
+
+        private void newportORToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            retrieveData("46050");
         }
     }
 }

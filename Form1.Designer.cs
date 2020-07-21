@@ -32,7 +32,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.buoysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rockawayNYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectBuoyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.breezyPointNYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newportORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -63,17 +65,33 @@
             // buoysToolStripMenuItem
             // 
             this.buoysToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rockawayNYToolStripMenuItem});
+            this.selectBuoyToolStripMenuItem});
             this.buoysToolStripMenuItem.Name = "buoysToolStripMenuItem";
             this.buoysToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.buoysToolStripMenuItem.Text = "Buoys";
             // 
-            // rockawayNYToolStripMenuItem
+            // selectBuoyToolStripMenuItem
             // 
-            this.rockawayNYToolStripMenuItem.Name = "rockawayNYToolStripMenuItem";
-            this.rockawayNYToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.rockawayNYToolStripMenuItem.Text = "44065 - Rockaway";
-            this.rockawayNYToolStripMenuItem.Click += new System.EventHandler(this.rockawayNYToolStripMenuItem_Click);
+            this.selectBuoyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.breezyPointNYToolStripMenuItem,
+            this.newportORToolStripMenuItem});
+            this.selectBuoyToolStripMenuItem.Name = "selectBuoyToolStripMenuItem";
+            this.selectBuoyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.selectBuoyToolStripMenuItem.Text = "Select Buoy";
+            // 
+            // breezyPointNYToolStripMenuItem
+            // 
+            this.breezyPointNYToolStripMenuItem.Name = "breezyPointNYToolStripMenuItem";
+            this.breezyPointNYToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.breezyPointNYToolStripMenuItem.Text = "Breezy Point, NY";
+            this.breezyPointNYToolStripMenuItem.Click += new System.EventHandler(this.breezyPointNYToolStripMenuItem_Click);
+            // 
+            // newportORToolStripMenuItem
+            // 
+            this.newportORToolStripMenuItem.Name = "newportORToolStripMenuItem";
+            this.newportORToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newportORToolStripMenuItem.Text = "Newport, OR";
+            this.newportORToolStripMenuItem.Click += new System.EventHandler(this.newportORToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -110,8 +128,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem buoysToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rockawayNYToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem selectBuoyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem breezyPointNYToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newportORToolStripMenuItem;
     }
 }
 
