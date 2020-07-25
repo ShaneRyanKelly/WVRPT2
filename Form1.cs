@@ -21,11 +21,14 @@ namespace WVRPT2
             con = ConnectDB();
         }
 
-        private void retrieveData(string idNumber)
+        private void retrieveData(string idNumber, bool isWave)
         {
             try
             {
-                String query = @"Select  DateIndex,
+                String query;
+                if (isWave)
+                {
+                    query = @"Select  DateIndex,
                     WVHT,
                     SwH,
                     SwP,
@@ -37,6 +40,26 @@ namespace WVRPT2
                     APD,
                     MWD
                     from dbo.Buoy_" + idNumber;
+                }
+                else
+                {
+                    query = @"Select  DateIndex,
+                    WDIR,
+                    WSPD,
+                    GST,
+                    WVHT,
+                    DPD,
+                    APD,
+                    MWD,
+                    PRES,
+                    ATMP,
+                    WTMP,
+                    DEWP,
+                    VIS,
+                    PTDY,
+                    TIDE
+                    from dbo.Met_" + idNumber;
+                }
                 SqlCommand cmd = new SqlCommand(query, con);
 
                 con.Open();
@@ -61,64 +84,125 @@ namespace WVRPT2
             return con;
         }
 
-        private void capeCodMAToolStripMenuItem1_Click(object sender, EventArgs e)
+
+        private void capeCodMAToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            retrieveData("44018");
+            retrieveData("44018", true);
         }
 
-        private void diamondShoalsNCToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void diamondShoalsNCToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            retrieveData("41025");
+            retrieveData("41025", true);
         }
 
-        private void capeMayNJToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void capeMayNJToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            retrieveData("44009");
+            retrieveData("44009", true);
         }
 
-        private void breezyPointNYToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void breezyPointNYToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            retrieveData("44065");
+            retrieveData("44065", true);
         }
 
-        private void montaukPointNYToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void montaukPointNYToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            retrieveData("44017");
+            retrieveData("44017", true);
         }
 
-        private void stAugustineFLToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void stAugustineFLToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            retrieveData("41117");
+            retrieveData("41117", true);
         }
 
-        private void morroBayCAToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void morroBayCAToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            retrieveData("46028");
+            retrieveData("46028", true);
         }
 
-        private void pointArenaCAToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void pointArenaCAToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            retrieveData("46014");
+            retrieveData("46014", true);
         }
 
-        private void newportORToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void sanNicolasIslandCAToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            retrieveData("46050");
+            retrieveData("46219", true);
         }
 
-        private void sanNicolasIslandCAToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void newportORToolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            retrieveData("46219");
+            retrieveData("46050", true);
+        }
+
+        private void capeCodMAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            retrieveData("44018", false);
+        }
+
+        private void diamondShoalsNCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            retrieveData("41025", false);
+        }
+
+        private void capeMayNJToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            retrieveData("44009", false);
+        }
+
+        private void breezyPointNYToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            retrieveData("44065", false);
+        }
+
+        private void montaukPointNYToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            retrieveData("44017", false);
+        }
+
+        private void stAugustineFLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            retrieveData("41117", false);
+        }
+
+        private void morroBayCAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            retrieveData("46028", false);
+        }
+
+        private void pointArenaCAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            retrieveData("46014", false);
+        }
+
+        private void sanNicolasIslandCAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            retrieveData("46219", false);
+        }
+
+        private void newportORToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            retrieveData("46050", false);
         }
     }
 }
